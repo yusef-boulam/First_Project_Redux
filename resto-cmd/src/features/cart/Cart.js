@@ -7,11 +7,6 @@ export const Cart = () => {
 
     const [list, setList] = useState(store.getState().list);
 
-    const totalCommand = list.reduce(
-        (prv, cur) => Math.round(prv + cur.price),
-        0
-    );
-
     useEffect(() => {
         store.subscribe(() => {
             setList(store.getState().list);
@@ -35,11 +30,7 @@ export const Cart = () => {
                     {item.title} {item.price} €
                 </span>
             ))}
-            {list.length === 0 ? (
-                <div className="TotalCommand">Aucun produit sélectionné</div>
-            ) : (
-                <div className="TotalCommand">Total : {totalCommand} €</div>
-            )}
+
         </div>
     );
 };
