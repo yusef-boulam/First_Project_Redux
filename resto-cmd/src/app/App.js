@@ -4,6 +4,7 @@ import './App.css';
 import { Cart } from '../features/cart/Cart';
 import { Voucher } from '../features/voucher/Voucher';
 import { Total } from '../features/total/Total';
+import { Owner } from '../features/owner/Owner';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Cart />
         <Total />
         <Voucher />
+        <Owner />
       </div>
     </Provider>
   );
