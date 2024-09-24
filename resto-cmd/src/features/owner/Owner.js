@@ -1,5 +1,6 @@
 import { useStore } from "react-redux";
 import { useEffect, useState } from "react";
+import { ownerSlice } from "./ownerSlice";
 
 
 
@@ -14,10 +15,7 @@ export const Owner = () => {
     const handleSubmit = (evt) => {
         evt.preventDefault();
         const firstName = evt.currentTarget.firstName.value;
-        store.dispatch({
-            type: "UPDATE_FIRSTNAME",
-            payload: firstName
-        });
+        store.dispatch(ownerSlice.actions.updateFirstName(firstName));
     }
 
     return (
